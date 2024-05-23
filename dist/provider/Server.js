@@ -26,8 +26,8 @@ class Server {
         this.connectDB();
     }
     loadRoutes(controllers) {
-        this.app.get('/', (req, res) => {
-            res.status(200).send('Hello world');
+        this.app.get("/", (req, res) => {
+            res.status(200).send("Hello world");
         });
         controllers.forEach((controller) => {
             this.app.use(`/${controller.prefix}`, controller.router);
